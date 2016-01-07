@@ -1,1 +1,1 @@
-// Your .js
+'use strict';$(document).ready(function() {  var  $imageListItem = $('.image-list__item');  // add class to image--list__item  $imageListItem.on('click', function() {    $(this).addClass('image-list__item__active').siblings().removeClass('image-list__item__active');    $imageListItem.on('dblclick',function() {      var $deleted = $(this).detach().removeClass('image-list__item__active');      $('.image-list.deleted').append($deleted);    })  });});

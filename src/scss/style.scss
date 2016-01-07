@@ -1,10 +1,8 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
-
+@import "base/reset";
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
-* { box-sizing: border-box; }
 
 body {
   background-color: #FCF8EF;
@@ -13,10 +11,55 @@ body {
   letter-spacing: .25em;
 }
 
+li {
+  display: list-item;
+}
+
+p {
+  letter-spacing: .1em;
+  text-align: left;
+  text-transform: none;
+}
+
+.image-list {
+  list-style-type: none;
+  margin-bottom: 20px;
+  min-height: 500px;
+  overflow: hidden;
+}
+
+.image-list__item {
+  display: inline-block;
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  width: 50%;
+
+  & img {
+    max-width: 100px;
+  }
+
+  @media screen and (min-width: 800px) {
+    width: 33.3333%;
+  }
+}
+
+.image-list__item__active {
+  background-color: #bdc3c7;
+  transition: background-color 0.5s ease;
+}
+
+.image-list__item__notactive {
+  background-color: pink;
+}
+
 .grid-container {
   max-width: 1200px;
   width: 100%;
 }
+
+
 
 /* ----------------------- */
 /* Clearfix */
@@ -45,11 +88,11 @@ body {
 .col-5{ width: 100%; }
 .col-6{ width: 100%; }
 
-.row .col-2:last-of-type{
+.row .col-2:last-of-type {
   width: 100%;
 }
 
-.row .col-5 ~ .col-1{
+.row .col-5 ~ .col-1 {
   width: 100%;
 }
 
@@ -104,13 +147,15 @@ body {
 
 .header {
   float: right;
-  height: 200px;
+  height: auto;
 }
 
 .main-nav {
   display: inline;
   margin: 0;
   padding: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
@@ -129,7 +174,7 @@ body {
   color: #fff;
 }
 
-ul li {
+.main-nav ul li {
   display: inline-block;
   list-style-type: none;
   padding-right: 20px;
@@ -139,11 +184,6 @@ ul li {
   float: right;
 }
 
-p {
-  letter-spacing: .1em;
-  text-align: left;
-  text-transform: none;
-}
 
 /* ------------------------ */
 /* Buttons */
@@ -152,6 +192,7 @@ p {
   letter-spacing: .1em;
   margin-bottom: 1em;
   padding: 0 0 1em 0;
+  margin-right: 40px;
   width: 15em;
 }
 
@@ -167,6 +208,7 @@ p {
 .button-nav li {
   border-bottom: 1px solid #ecf0f1;
   margin: 0;
+  text-align: left;
   width: 120px;
 }
 
@@ -186,8 +228,16 @@ p {
   color: #fff;
 }
 
+
+ol.square {
+  line-height: 1.5;
+  padding-left: 1rem;
+  //list-style: square;
+  //list-style-position: inside;
+}
+
 footer {
-  height: 100px;
+  height: 200px;
 }
 
 /* ----------------------- */
@@ -213,6 +263,10 @@ footer {
   background-color: #9b59b6;
 }
 
+.silver {
+  background-color: #bdc3c7;
+}
+
 .sunflower {
   background-color: #f1c40f;
 }
@@ -223,6 +277,10 @@ footer {
 
 .rose {
   background-color: #e74c3c;
+}
+
+.silver {
+  background-color: #bdc3c7;
 }
 
 /* ------------------------ */
@@ -239,6 +297,14 @@ footer {
   margin-top: 3rem;
 }
 
+.mb1 {
+  margin-bottom: 1rem;
+}
+
+.mb3 {
+  margin-bottom: 3rem;
+}
+
 .pt1 {
   padding-top: 1rem;
 }
@@ -248,7 +314,11 @@ footer {
 }
 
 .pt3 {
-padding-top: 3rem;
+  padding-top: 3rem;
+}
+
+.px3 {
+  padding-left: 3rem;
 }
 
 .chunk {
